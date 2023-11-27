@@ -1,0 +1,36 @@
+{
+  "main": "PGoups",
+  "title": "Easy Check",
+  "lists": [
+    {
+      "title": "List1",
+      "content": [
+        {
+          "text": "Item1",
+          "done": false
+        },
+        {
+          "text": "Item2",
+          "done": true
+        },
+        {
+          "text": "Item3",
+          "done": false
+        }
+      ]
+    },
+    {
+      "title": "List2",
+      "content": [
+        {
+          "text": "Item1",
+          "done": true
+        },
+        {
+          "text": "Item2",
+          "done": true
+        }
+      ]
+    }
+  ]
+}
