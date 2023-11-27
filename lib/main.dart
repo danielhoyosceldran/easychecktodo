@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import './pages/PGroups.dart';
+import './pages/PList.dart';
 
 void main() {
   runApp(EasyCheck());
@@ -50,7 +51,11 @@ class _EasyCheckState extends State<EasyCheck> {
           //print(snapshot.connectionState);
           if(snapshot.hasData) {
             Map nonFutureData = snapshot.data as Map;
-            return PGroups(data: nonFutureData  );
+            print(nonFutureData["main"]);
+            print(nonFutureData["main"].runtimeType);
+            return (nonFutureData["main"] == "PGroups")
+                ? PGroups(content: nonFutureData["lists"], title: nonFutureData["title"])
+                : PLists(content: nonFutureData["lists"][0]["content"], title: nonFutureData["lists"][0]["title"]);
           } else if (snapshot.hasError){
             //print(snapshot.error);
             return Text("${snapshot.error}");

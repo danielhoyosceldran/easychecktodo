@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import '../util/UColors.dart';
 import '../widgets/WAppBar.dart';
+import '../widgets/WListItem.dart';
 
 class PGroups extends StatefulWidget {
-  final Map data;
+  final List content;
+  final String title;
 
-  const PGroups({
+  PGroups({
     Key? key,
-    required this.data
+    required this.content,
+    required this.title
   }) : super(key: key);
 
   @override
@@ -19,11 +22,11 @@ class _PGroupsState extends State<PGroups> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: cWhite,
-      appBar: WAppBar(data: widget.data, backArrow: true,),
+      appBar: WAppBar(title: widget.title),
       body: ListView(
         physics: const BouncingScrollPhysics(),
         children: [
-          Text("data"),
+          Text("hola"),
           const Spacer(),
         ],
       ),

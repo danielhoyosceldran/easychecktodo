@@ -4,12 +4,12 @@ import 'WButton.dart';
 import '../util/StandardSize.dart';
 
 class WAppBar extends StatefulWidget implements PreferredSizeWidget {
-  final Map data;
+  final String title;
   bool? backArrow;
 
   WAppBar({
     Key? key,
-    required this.data,
+    required this.title,
     this.backArrow = false
   }) : super(key: key);
 
@@ -30,13 +30,13 @@ class _WAppBarState extends State<WAppBar> {
         padding: const EdgeInsets.only(top: 38, left: 20, right: 30),
         child: Row(
           children: [
-            if (widget.backArrow!) WButton(svgIconLocation: "assets/imgs/Arrow.svg", height: 18, paddingRight: 8, paddingTop: 2),
+            if (widget.backArrow!) WButton(svgIconLocation: "assets/images/Arrow.svg", height: 18, paddingRight: 8, paddingTop: 2),
             Text(
-              widget.data["title"],
+              widget.title,
               style: GoogleFonts.roboto(fontSize: titleFontSize, fontWeight: FontWeight.w400),
             ),
             const Spacer(),
-            WButton(svgIconLocation: "assets/imgs/Menu.svg", paddingTop: 4)
+            WButton(svgIconLocation: "assets/images/Menu.svg", paddingTop: 4)
           ],
         ),
       ),
