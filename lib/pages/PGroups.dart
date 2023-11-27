@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../util/UColors.dart';
+import '../widgets/WAppBar.dart';
 
 class PGroups extends StatefulWidget {
   final Map data;
@@ -18,9 +19,7 @@ class _PGroupsState extends State<PGroups> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: cWhite,
-      appBar: AppBar(
-        title: Text(widget.data["title"]),
-      ),
+      appBar: WAppBar(data: widget.data, backArrow: true,),
       body: ListView(
         physics: const BouncingScrollPhysics(),
         children: [
@@ -32,9 +31,11 @@ class _PGroupsState extends State<PGroups> {
         onPressed: () {
           print("pressed");
         },
-        backgroundColor: cGreen,
-        tooltip: 'Add task file.',
-        child: const Icon(Icons.add),
+        backgroundColor: cWhite,
+        child: Icon(
+            Icons.add,
+            color: cBlack
+        ),
       ),
     );
   }

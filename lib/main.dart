@@ -47,12 +47,12 @@ class _EasyCheckState extends State<EasyCheck> {
       home: FutureBuilder(
         future: _data,
         builder: (context, snapshot) {
-          print(snapshot.connectionState);
+          //print(snapshot.connectionState);
           if(snapshot.hasData) {
             Map nonFutureData = snapshot.data as Map;
             return PGroups(data: nonFutureData  );
           } else if (snapshot.hasError){
-            print(snapshot.error);
+            //print(snapshot.error);
             return Text("${snapshot.error}");
           }
           return Container(
